@@ -27,11 +27,11 @@ function setInitialDOM() {
   winScoreElm.textContent = winScore;
   p1ScoreElm.textContent = p1Score;
   p2ScoreElm.textContent = p2Score;
-  if (p1Turn) {
-    p1BtnElm.removeAttribute("disabled");
+  if (!p1Turn) {
+    p1BtnElm.setAttribute("disabled", "disabled");
   }
-  if (p2Turn) {
-    p2BtnElm.removeAttribute("disabled");
+  if (!p2Turn) {
+    p2BtnElm.setAttribute("disabled", "disabled");
   }
 }
 setInitialDOM();
@@ -48,6 +48,7 @@ const validateInput = function (inputVal) {
 function resetInput() {
   inputElm.value = "";
   winPlayerElm.textContent = "";
+  p1BtnElm.removeAttribute("disabled");
 }
 resetInput();
 
