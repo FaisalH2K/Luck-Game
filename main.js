@@ -47,8 +47,6 @@ const validateInput = function (inputVal) {
 
 function resetInput() {
   inputElm.value = "";
-  winPlayerElm.textContent = "";
-  p1BtnElm.removeAttribute("disabled");
 }
 resetInput();
 
@@ -107,5 +105,6 @@ p2BtnElm.addEventListener("click", () => {
 resetBtnElm.addEventListener("click", () => {
   setIntialValue();
   setInitialDOM();
-  resetInput();
+  winPlayerElm.textContent = "";
+  p1BtnElm.removeAttribute("disabled");
 });
